@@ -1,0 +1,30 @@
+package org.ihtsdo.arena.drools
+
+#list any import classes here.
+import java.util.Collection;
+
+import org.ihtsdo.arena.conceptview.ConceptViewSettings;
+import org.dwfa.ace.api.I_ConfigAceFrame;
+import org.ihtsdo.tk.api.coordinate.ViewCoordinate;
+import org.ihtsdo.tk.drools.facts.Context;
+import org.ihtsdo.tk.drools.facts.DescFact;
+import org.ihtsdo.tk.drools.facts.ViewFact;
+import org.ihtsdo.tk.drools.facts.View;
+
+#declare any global variables here
+
+global Collection actions;
+global ViewCoordinate vc;
+global ConceptViewSettings cvSettings;
+global I_ConfigAceFrame config;
+
+#list any project specific rules for this file here
+
+rule "sample"
+	when
+                ViewFact(getView() == View.STATED)
+		$dropTarget: DescFact(context == Context.DROP_TARGET)
+		$dropObject: DescFact(context == Context.DROP_OBJECT, component == $dropTarget.component)
+	then
+		System.out.println("contextual drop actions rules sample");
+end

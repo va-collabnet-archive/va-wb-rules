@@ -32,7 +32,7 @@
 	</scm>
 
 	<properties>
-		<org.ihtsdo.wb-toolkit.version>2.32-trek-no-jini-va-1.30</org.ihtsdo.wb-toolkit.version>
+		<org.ihtsdo.wb-toolkit.version>2.32-trek-no-jini-va-1.33-SNAPSHOT</org.ihtsdo.wb-toolkit.version>
 	</properties>
 
 	<dependencies>
